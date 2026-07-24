@@ -27,9 +27,9 @@ threading.Thread(target=run_flask, daemon=True).start()
 async def start(update: Update, context):
     await update.message.reply_text(
         "🎯 Привет! Используй команды:\n"
-        "/2_6 - два числа от 1 до 6\n"
-        "/2_8 - два числа от 1 до 8\n"
-        "/2_10 - два числа от 1 до 10"
+        "/26 - два числа от 1 до 6\n"
+        "/28 - два числа от 1 до 8\n"
+        "/210 - два числа от 1 до 10"
     )
 
 async def two_from_6(update: Update, context):
@@ -49,9 +49,9 @@ async def two_from_10(update: Update, context):
 
 app = Application.builder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
-app.add_handler(CommandHandler("2_6", two_from_6))
-app.add_handler(CommandHandler("2_8", two_from_8))
-app.add_handler(CommandHandler("2_10", two_from_10))
+app.add_handler(CommandHandler("26", two_from_6))
+app.add_handler(CommandHandler("28", two_from_8))
+app.add_handler(CommandHandler("210", two_from_10))
 
-print("✅ Бот запущен! Команды: /2_6, /2_8, /2_10")
+print("✅ Бот запущен! Команды: /26, /28, /210")
 app.run_polling(drop_pending_updates=True)
